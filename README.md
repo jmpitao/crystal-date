@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,63 +8,118 @@
 <title>For Crystal ♡</title>
 
 <style>
+
+/* =================================
+   RESET
+================================= */
+
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+}
+
+body {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
+
     font-family: Georgia, serif;
+
     background:
-        radial-gradient(circle at top, #fff8fa, transparent 40%),
-        linear-gradient(135deg, #ffeaf1, #fff5f8);
+        radial-gradient(
+            circle at top,
+            #fff8fa,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ffeaf1,
+            #fff5f8
+        );
+
     color: #642b3d;
 }
+
+
+/* =================================
+   REMOVE BLUE LINK / UNDERLINE
+================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =================================
+   CARD
+================================= */
 
 .card {
     width: 100%;
     max-width: 600px;
-    background: rgba(255,255,255,.94);
+
+    background: rgba(255, 255, 255, 0.94);
+
     border-radius: 28px;
+
     padding: 35px 25px;
+
     text-align: center;
-    box-shadow: 0 15px 45px rgba(120,40,70,.15);
+
+    box-shadow:
+        0 15px 45px rgba(120, 40, 70, 0.15);
 }
 
-/* --------------------
+
+/* =================================
    GENERAL
--------------------- */
+================================= */
 
 .hidden {
     display: none !important;
 }
 
 .fade {
-    animation: fade .8s ease;
+    animation: fade 0.8s ease;
 }
 
 .heart {
     font-size: 55px;
     color: #d95778;
+
     animation: heartbeat 1.5s infinite;
 }
 
 h1 {
     color: #9e3c59;
+    margin-bottom: 15px;
 }
 
 h2 {
     color: #9e3c59;
 }
 
-/* --------------------
+
+/* =================================
    STEP 1
--------------------- */
+================================= */
 
 .question {
     font-size: 23px;
@@ -74,42 +130,77 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 15px;
-    min-height: 70px;
+
+    min-height: 80px;
 }
+
+
+/* =================================
+   BUTTONS
+================================= */
 
 button {
     border: none;
+
     border-radius: 30px;
+
     padding: 13px 30px;
+
     font-family: Georgia, serif;
     font-size: 16px;
+
     cursor: pointer;
-    transition: .3s;
+
+    transition: 0.3s;
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
+button:focus {
+    outline: none;
+}
+
+
+/* YES */
 
 #yesBtn {
     background: #d95778;
     color: white;
-    box-shadow: 0 5px 15px rgba(217,87,120,.25);
+
+    box-shadow:
+        0 5px 15px rgba(217, 87, 120, 0.25);
 }
 
 #yesBtn:hover {
     transform: scale(1.08);
 }
 
+
+/* NO */
+
 #noBtn {
     background: #eeeeee;
     color: #555;
+
+    border: 1px solid #ddd;
 }
 
-/* --------------------
+
+/* =================================
    STEP 2
--------------------- */
+================================= */
 
 .subtitle {
     line-height: 1.7;
 }
+
+
+/* =================================
+   DATE
+================================= */
 
 .date-box {
     margin-top: 25px;
@@ -118,148 +209,304 @@ button {
 input[type="date"] {
     width: 100%;
     max-width: 300px;
+
     padding: 13px;
+
     border: 2px solid #efb5c5;
+
     border-radius: 12px;
+
     font-size: 16px;
+
     color: #642b3d;
+
     background: white;
+
+    font-family: Georgia, serif;
 }
+
+input[type="date"]:focus {
+    outline: none;
+
+    border-color: #d95778;
+
+    box-shadow:
+        0 0 0 3px rgba(217, 87, 120, 0.12);
+}
+
+
+/* =================================
+   LOCATIONS
+================================= */
 
 .places {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 12px;
+
     margin-top: 15px;
 }
 
 .place {
     padding: 18px 10px;
+
     border-radius: 16px;
+
     background: #fff4f7;
+
     border: 2px solid #f2c4d0;
+
     cursor: pointer;
-    transition: .3s;
+
+    transition: 0.3s;
+
+    user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 .place:hover {
     transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 15px rgba(120, 40, 70, 0.08);
 }
 
 .place.selected {
     background: #d95778;
+
     color: white;
+
     border-color: #d95778;
+
+    transform: translateY(-2px);
 }
+
+
+/* =================================
+   CONFIRM
+================================= */
 
 .confirm {
     margin-top: 25px;
+
     background: #9e3c59;
+
     color: white;
 }
 
-/* --------------------
-   STEP 3 LETTER
--------------------- */
+.confirm:hover {
+    transform: scale(1.05);
+
+    background: #87324d;
+}
+
+
+/* =================================
+   STEP 3 — LETTER
+================================= */
 
 .letter {
     margin-top: 25px;
+
     padding: 25px;
+
     background: #fff7fa;
+
     border-left: 4px solid #d95778;
+
     border-radius: 12px;
+
     text-align: left;
+
     line-height: 1.8;
 }
 
 .signature {
     text-align: right;
+
     font-style: italic;
+
     margin-top: 20px;
 }
+
+
+/* =================================
+   DATE SUMMARY
+================================= */
 
 .date-summary {
     margin-top: 20px;
+
     padding: 15px;
+
     background: #fff0f4;
+
     border-radius: 15px;
+
     line-height: 1.7;
 }
 
-/* --------------------
+
+/* =================================
    ANIMATIONS
--------------------- */
+================================= */
 
 @keyframes fade {
+
     from {
         opacity: 0;
-        transform: translateY(20px);
+
+        transform:
+            translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
+
 }
 
+
 @keyframes heartbeat {
-    0%,100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
 
     50% {
         transform: scale(1.12);
     }
+
 }
+
+
+/* =================================
+   FLOATING HEARTS
+================================= */
 
 .floating-heart {
     position: fixed;
+
     bottom: -30px;
+
     color: #d95778;
+
     pointer-events: none;
-    animation: floatUp 5s linear forwards;
+
+    animation:
+        floatUp 5s linear forwards;
+
+    z-index: 9999;
 }
 
+
 @keyframes floatUp {
+
     from {
-        transform: translateY(0);
+        transform:
+            translateY(0);
+
         opacity: 1;
     }
 
     to {
-        transform: translateY(-110vh);
+        transform:
+            translateY(-110vh);
+
         opacity: 0;
     }
+
 }
 
-@media(max-width:500px) {
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 12px;
+    }
 
     .card {
         padding: 28px 18px;
+
+        border-radius: 22px;
+    }
+
+    .question {
+        font-size: 20px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        padding: 12px 22px;
+        font-size: 15px;
     }
 
     .places {
         grid-template-columns: 1fr;
     }
 
+    .letter {
+        padding: 20px;
+    }
+
 }
+
+
+/* =================================
+   VERY SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    #yesBtn,
+    #noBtn {
+        width: 160px;
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="card">
 
 
     <!-- =================================
-         STEP 1 — YES / NO
-    ================================== -->
+         STEP 1
+    ================================= -->
 
     <section id="step1">
 
-        <div class="heart">♡</div>
+        <div class="heart">
+            ♡
+        </div>
 
-        <h1>Crystal...</h1>
+        <h1>
+            Crystal...
+        </h1>
 
         <div class="question">
             Will you go on a date with me? 🥺
@@ -282,19 +529,30 @@ input[type="date"] {
 
 
     <!-- =================================
-         STEP 2 — DATE + LOCATION
-    ================================== -->
+         STEP 2
+    ================================= -->
 
-    <section id="step2" class="hidden">
+    <section
+        id="step2"
+        class="hidden"
+    >
 
-        <div class="heart">♡</div>
+        <div class="heart">
+            ♡
+        </div>
 
-        <h1>Yay! 🥹</h1>
+        <h1>
+            Yay! 🥹
+        </h1>
 
         <p class="subtitle">
+
             Then you get to choose everything.
+
             <br>
+
             Pick a date and a place for us. 🤍
+
         </p>
 
 
@@ -302,7 +560,9 @@ input[type="date"] {
 
         <div class="date-box">
 
-            <h2>When? 📅</h2>
+            <h2>
+                When? 📅
+            </h2>
 
             <input
                 type="date"
@@ -316,48 +576,76 @@ input[type="date"] {
 
         <div class="date-box">
 
-            <h2>Where? 📍</h2>
+            <h2>
+                Where? 📍
+            </h2>
 
             <div class="places">
 
+
                 <div
                     class="place"
-                    onclick="choosePlace(this, 'Festival Mall')"
+                    onclick="choosePlace(
+                        this,
+                        'Festival Mall'
+                    )"
                 >
+
                     🎡
                     <br>
+
                     Festival Mall
+
                 </div>
 
 
                 <div
                     class="place"
-                    onclick="choosePlace(this, 'SM City Sucat')"
+                    onclick="choosePlace(
+                        this,
+                        'SM City Sucat'
+                    )"
                 >
+
                     🛍️
                     <br>
+
                     SM City Sucat
+
                 </div>
 
 
                 <div
                     class="place"
-                    onclick="choosePlace(this, 'SM BF')"
+                    onclick="choosePlace(
+                        this,
+                        'SM BF'
+                    )"
                 >
+
                     ☕
                     <br>
+
                     SM BF
+
                 </div>
 
 
                 <div
                     class="place"
-                    onclick="choosePlace(this, 'SM Mall of Asia')"
+                    onclick="choosePlace(
+                        this,
+                        'SM Mall of Asia'
+                    )"
                 >
+
                     🌊
                     <br>
+
                     SM MOA
+
                 </div>
+
 
             </div>
 
@@ -376,17 +664,24 @@ input[type="date"] {
 
 
     <!-- =================================
-         STEP 3 — LETTER
-    ================================== -->
+         STEP 3
+    ================================= -->
 
-    <section id="step3" class="hidden">
+    <section
+        id="step3"
+        class="hidden"
+    >
 
-        <div class="heart">♡</div>
+        <div class="heart">
+            ♡
+        </div>
 
-        <h1>For You, Crystal</h1>
+        <h1>
+            For You, Crystal
+        </h1>
 
 
-        <!-- SELECTED DATE -->
+        <!-- DATE SUMMARY -->
 
         <div
             id="dateSummary"
@@ -438,7 +733,9 @@ input[type="date"] {
 
     </section>
 
+
 </div>
+
 
 
 <script>
@@ -448,30 +745,42 @@ input[type="date"] {
 ================================= */
 
 let selectedPlace = "";
+
 let noCount = 0;
 
 
 /* =================================
-   STEP 1 → STEP 2
+   YES BUTTON
 ================================= */
 
-document.getElementById("yesBtn").onclick = function() {
+document
+    .getElementById("yesBtn")
+    .onclick = function() {
 
-    document.getElementById("step1")
-        .classList.add("hidden");
+        document
+            .getElementById("step1")
+            .classList
+            .add("hidden");
 
-    document.getElementById("step2")
-        .classList.remove("hidden");
 
-    document.getElementById("step2")
-        .classList.add("fade");
+        document
+            .getElementById("step2")
+            .classList
+            .remove("hidden");
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 
-};
+        document
+            .getElementById("step2")
+            .classList
+            .add("fade");
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    };
 
 
 /* =================================
@@ -481,18 +790,28 @@ document.getElementById("yesBtn").onclick = function() {
 const noBtn =
     document.getElementById("noBtn");
 
+
 const noMessages = [
+
     "Are you sure? 🥺",
+
     "Really? 😭",
+
     "Think again...",
+
     "Please? 👉👈",
+
     "One more chance? 🥹",
+
     "I'll ask again ♡"
+
 ];
+
 
 noBtn.onclick = function() {
 
     noCount++;
+
 
     noBtn.innerText =
         noMessages[
@@ -504,22 +823,27 @@ noBtn.onclick = function() {
 
 
     /*
-       Make the NO button move around.
+       Move the No button
     */
 
     const x =
-        Math.floor(Math.random() * 140) - 70;
+        Math.floor(
+            Math.random() * 140
+        ) - 70;
+
 
     const y =
-        Math.floor(Math.random() * 60) - 30;
+        Math.floor(
+            Math.random() * 60
+        ) - 30;
+
 
     noBtn.style.transform =
         `translate(${x}px, ${y}px)`;
 
 
     /*
-       After a few attempts,
-       make it reappear normally.
+       Reset after 6 clicks
     */
 
     if (noCount >= 6) {
@@ -531,7 +855,7 @@ noBtn.onclick = function() {
             noBtn.innerText = "No";
 
             noBtn.style.transform =
-                "translate(0,0)";
+                "translate(0, 0)";
 
         }, 1000);
 
@@ -544,18 +868,25 @@ noBtn.onclick = function() {
    CHOOSE LOCATION
 ================================= */
 
-function choosePlace(element, place) {
+function choosePlace(
+    element,
+    place
+) {
 
     document
         .querySelectorAll(".place")
         .forEach(function(item) {
 
-            item.classList.remove("selected");
+            item.classList
+                .remove("selected");
 
         });
 
 
-    element.classList.add("selected");
+    element
+        .classList
+        .add("selected");
+
 
     selectedPlace = place;
 
@@ -563,16 +894,20 @@ function choosePlace(element, place) {
 
 
 /* =================================
-   STEP 2 → STEP 3
+   CONFIRM DATE
 ================================= */
 
 function confirmDate() {
 
     const date =
-        document.getElementById("datePicker").value;
+        document
+            .getElementById("datePicker")
+            .value;
 
 
-    /* Make sure date is selected */
+    /*
+       Check date
+    */
 
     if (!date) {
 
@@ -584,7 +919,9 @@ function confirmDate() {
     }
 
 
-    /* Make sure place is selected */
+    /*
+       Check location
+    */
 
     if (!selectedPlace) {
 
@@ -596,10 +933,14 @@ function confirmDate() {
     }
 
 
-    /* Format date */
+    /*
+       Format date
+    */
 
     const formattedDate =
-        new Date(date + "T00:00:00")
+        new Date(
+            date + "T00:00:00"
+        )
         .toLocaleDateString(
             "en-US",
             {
@@ -611,41 +952,58 @@ function confirmDate() {
         );
 
 
-    /* Put date + place into letter */
+    /*
+       Show selected information
+    */
 
-    document.getElementById(
-        "dateSummary"
-    ).innerHTML = `
+    document
+        .getElementById("dateSummary")
+        .innerHTML = `
 
-        <strong>Our Date ♡</strong>
+            <strong>
+                Our Date ♡
+            </strong>
 
-        <br>
+            <br>
 
-        📅 ${formattedDate}
+            📅 ${formattedDate}
 
-        <br>
+            <br>
 
-        📍 ${selectedPlace}
+            📍 ${selectedPlace}
 
-    `;
-
-
-    /* Hide Step 2 */
-
-    document.getElementById("step2")
-        .classList.add("hidden");
+        `;
 
 
-    /* Show Step 3 */
+    /*
+       Hide step 2
+    */
 
-    document.getElementById("step3")
-        .classList.remove("hidden");
+    document
+        .getElementById("step2")
+        .classList
+        .add("hidden");
 
-    document.getElementById("step3")
-        .classList.add("fade");
+
+    /*
+       Show step 3
+    */
+
+    document
+        .getElementById("step3")
+        .classList
+        .remove("hidden");
 
 
-    /* Scroll to top */
+    document
+        .getElementById("step3")
+        .classList
+        .add("fade");
+
+
+    /*
+       Scroll to top
+    */
 
     window.scrollTo({
         top: 0,
@@ -653,7 +1011,9 @@ function confirmDate() {
     });
 
 
-    /* Hearts */
+    /*
+       Create hearts
+    */
 
     createHearts();
 
@@ -675,11 +1035,13 @@ function createHearts() {
         const heart =
             document.createElement("div");
 
+
         heart.className =
             "floating-heart";
 
+
         heart.innerText =
-            Math.random() > .5
+            Math.random() > 0.5
             ? "♡"
             : "♥";
 
@@ -689,23 +1051,32 @@ function createHearts() {
 
 
         heart.style.fontSize =
-            (15 + Math.random() * 20)
-            + "px";
+            (
+                15 +
+                Math.random() * 20
+            ) + "px";
 
 
         heart.style.animationDuration =
-            (3 + Math.random() * 3)
-            + "s";
+            (
+                3 +
+                Math.random() * 3
+            ) + "s";
 
 
-        document.body.appendChild(heart);
+        document
+            .body
+            .appendChild(heart);
 
 
-        setTimeout(function() {
+        setTimeout(
+            function() {
 
-            heart.remove();
+                heart.remove();
 
-        }, 6000);
+            },
+            6000
+        );
 
     }
 
@@ -713,6 +1084,9 @@ function createHearts() {
 
 </script>
 
+</body>
+
+</html>
 </body>
 </html>
 
