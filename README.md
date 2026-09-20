@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For Crystal ♡</title>
-
 <style>
-
-/* =================================
-   RESET
-================================= */
-
 * {
     box-sizing: border-box;
 }
@@ -21,15 +7,14 @@ html,
 body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 body {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 20px;
 
     font-family: Georgia, serif;
@@ -49,33 +34,15 @@ body {
     color: #642b3d;
 }
 
-
-/* =================================
-   REMOVE BLUE LINK / UNDERLINE
-================================= */
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:visited,
-a:hover,
-a:active {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* =================================
-   CARD
-================================= */
+/* ================================
+   MAIN CARD
+================================ */
 
 .card {
     width: 100%;
     max-width: 600px;
 
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255,255,255,.94);
 
     border-radius: 28px;
 
@@ -84,27 +51,27 @@ a:active {
     text-align: center;
 
     box-shadow:
-        0 15px 45px rgba(120, 40, 70, 0.15);
+        0 15px 45px rgba(120,40,70,.15);
 }
 
-
-/* =================================
+/* ================================
    GENERAL
-================================= */
+================================ */
 
 .hidden {
     display: none !important;
 }
 
 .fade {
-    animation: fade 0.8s ease;
+    animation: fade .8s ease;
 }
 
 .heart {
     font-size: 55px;
     color: #d95778;
 
-    animation: heartbeat 1.5s infinite;
+    animation:
+        heartbeat 1.5s infinite;
 }
 
 h1 {
@@ -116,10 +83,9 @@ h2 {
     color: #9e3c59;
 }
 
-
-/* =================================
+/* ================================
    STEP 1
-================================= */
+================================ */
 
 .question {
     font-size: 23px;
@@ -136,10 +102,9 @@ h2 {
     min-height: 80px;
 }
 
-
-/* =================================
+/* ================================
    BUTTONS
-================================= */
+================================ */
 
 button {
     border: none;
@@ -149,13 +114,15 @@ button {
     padding: 13px 30px;
 
     font-family: Georgia, serif;
+
     font-size: 16px;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: .3s;
 
     user-select: none;
+
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -163,44 +130,42 @@ button:focus {
     outline: none;
 }
 
-
-/* YES */
+/* YES BUTTON */
 
 #yesBtn {
     background: #d95778;
+
     color: white;
 
     box-shadow:
-        0 5px 15px rgba(217, 87, 120, 0.25);
+        0 5px 15px rgba(217,87,120,.25);
 }
 
 #yesBtn:hover {
     transform: scale(1.08);
 }
 
-
-/* NO */
+/* NO BUTTON */
 
 #noBtn {
     background: #eeeeee;
+
     color: #555;
 
     border: 1px solid #ddd;
 }
 
-
-/* =================================
+/* ================================
    STEP 2
-================================= */
+================================ */
 
 .subtitle {
     line-height: 1.7;
 }
 
-
-/* =================================
+/* ================================
    DATE
-================================= */
+================================ */
 
 .date-box {
     margin-top: 25px;
@@ -231,13 +196,12 @@ input[type="date"]:focus {
     border-color: #d95778;
 
     box-shadow:
-        0 0 0 3px rgba(217, 87, 120, 0.12);
+        0 0 0 3px rgba(217,87,120,.12);
 }
 
-
-/* =================================
+/* ================================
    LOCATIONS
-================================= */
+================================ */
 
 .places {
     display: grid;
@@ -260,7 +224,7 @@ input[type="date"]:focus {
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: .3s;
 
     user-select: none;
 
@@ -271,7 +235,7 @@ input[type="date"]:focus {
     transform: translateY(-3px);
 
     box-shadow:
-        0 6px 15px rgba(120, 40, 70, 0.08);
+        0 6px 15px rgba(120,40,70,.08);
 }
 
 .place.selected {
@@ -284,10 +248,9 @@ input[type="date"]:focus {
     transform: translateY(-2px);
 }
 
-
-/* =================================
-   CONFIRM
-================================= */
+/* ================================
+   CONFIRM BUTTON
+================================ */
 
 .confirm {
     margin-top: 25px;
@@ -303,10 +266,9 @@ input[type="date"]:focus {
     background: #87324d;
 }
 
-
-/* =================================
+/* ================================
    STEP 3 — LETTER
-================================= */
+================================ */
 
 .letter {
     margin-top: 25px;
@@ -332,10 +294,9 @@ input[type="date"]:focus {
     margin-top: 20px;
 }
 
-
-/* =================================
+/* ================================
    DATE SUMMARY
-================================= */
+================================ */
 
 .date-summary {
     margin-top: 20px;
@@ -349,10 +310,9 @@ input[type="date"]:focus {
     line-height: 1.7;
 }
 
-
-/* =================================
+/* ================================
    ANIMATIONS
-================================= */
+================================ */
 
 @keyframes fade {
 
@@ -372,7 +332,6 @@ input[type="date"]:focus {
 
 }
 
-
 @keyframes heartbeat {
 
     0%,
@@ -386,10 +345,9 @@ input[type="date"]:focus {
 
 }
 
-
-/* =================================
+/* ================================
    FLOATING HEARTS
-================================= */
+================================ */
 
 .floating-heart {
     position: fixed;
@@ -405,7 +363,6 @@ input[type="date"]:focus {
 
     z-index: 9999;
 }
-
 
 @keyframes floatUp {
 
@@ -425,10 +382,9 @@ input[type="date"]:focus {
 
 }
 
-
-/* =================================
+/* ================================
    MOBILE
-================================= */
+================================ */
 
 @media (max-width: 500px) {
 
@@ -452,6 +408,7 @@ input[type="date"]:focus {
 
     button {
         padding: 12px 22px;
+
         font-size: 15px;
     }
 
@@ -462,13 +419,11 @@ input[type="date"]:focus {
     .letter {
         padding: 20px;
     }
-
 }
 
-
-/* =================================
-   VERY SMALL PHONES
-================================= */
+/* ================================
+   SMALL PHONES
+================================ */
 
 @media (max-width: 360px) {
 
@@ -480,23 +435,15 @@ input[type="date"]:focus {
     #noBtn {
         width: 160px;
     }
-
 }
-
 </style>
-
-</head>
-
-
-<body>
 
 
 <div class="card">
 
-
-    <!-- =================================
+    <!-- ============================
          STEP 1
-    ================================= -->
+    ============================= -->
 
     <section id="step1">
 
@@ -527,10 +474,9 @@ input[type="date"]:focus {
     </section>
 
 
-
-    <!-- =================================
+    <!-- ============================
          STEP 2
-    ================================= -->
+    ============================= -->
 
     <section
         id="step2"
@@ -556,8 +502,6 @@ input[type="date"]:focus {
         </p>
 
 
-        <!-- DATE -->
-
         <div class="date-box">
 
             <h2>
@@ -572,8 +516,6 @@ input[type="date"]:focus {
         </div>
 
 
-        <!-- LOCATION -->
-
         <div class="date-box">
 
             <h2>
@@ -582,70 +524,44 @@ input[type="date"]:focus {
 
             <div class="places">
 
-
                 <div
                     class="place"
-                    onclick="choosePlace(
-                        this,
-                        'Festival Mall'
-                    )"
+                    onclick="choosePlace(this, 'Festival Mall')"
                 >
-
                     🎡
                     <br>
-
                     Festival Mall
-
                 </div>
 
 
                 <div
                     class="place"
-                    onclick="choosePlace(
-                        this,
-                        'SM City Sucat'
-                    )"
+                    onclick="choosePlace(this, 'SM City Sucat')"
                 >
-
                     🛍️
                     <br>
-
                     SM City Sucat
-
                 </div>
 
 
                 <div
                     class="place"
-                    onclick="choosePlace(
-                        this,
-                        'SM BF'
-                    )"
+                    onclick="choosePlace(this, 'SM BF')"
                 >
-
                     ☕
                     <br>
-
                     SM BF
-
                 </div>
 
 
                 <div
                     class="place"
-                    onclick="choosePlace(
-                        this,
-                        'SM Mall of Asia'
-                    )"
+                    onclick="choosePlace(this, 'SM Mall of Asia')"
                 >
-
                     🌊
                     <br>
-
                     SM MOA
-
                 </div>
-
 
             </div>
 
@@ -662,10 +578,9 @@ input[type="date"]:focus {
     </section>
 
 
-
-    <!-- =================================
+    <!-- ============================
          STEP 3
-    ================================= -->
+    ============================= -->
 
     <section
         id="step3"
@@ -681,16 +596,12 @@ input[type="date"]:focus {
         </h1>
 
 
-        <!-- DATE SUMMARY -->
-
         <div
             id="dateSummary"
             class="date-summary"
         >
         </div>
 
-
-        <!-- LETTER -->
 
         <div class="letter">
 
@@ -733,25 +644,23 @@ input[type="date"]:focus {
 
     </section>
 
-
 </div>
-
 
 
 <script>
 
-/* =================================
+/* ================================
    VARIABLES
-================================= */
+================================ */
 
 let selectedPlace = "";
 
 let noCount = 0;
 
 
-/* =================================
+/* ================================
    YES BUTTON
-================================= */
+================================ */
 
 document
     .getElementById("yesBtn")
@@ -783,9 +692,9 @@ document
     };
 
 
-/* =================================
+/* ================================
    NO BUTTON
-================================= */
+================================ */
 
 const noBtn =
     document.getElementById("noBtn");
@@ -822,10 +731,6 @@ noBtn.onclick = function() {
         ];
 
 
-    /*
-       Move the No button
-    */
-
     const x =
         Math.floor(
             Math.random() * 140
@@ -841,10 +746,6 @@ noBtn.onclick = function() {
     noBtn.style.transform =
         `translate(${x}px, ${y}px)`;
 
-
-    /*
-       Reset after 6 clicks
-    */
 
     if (noCount >= 6) {
 
@@ -864,9 +765,9 @@ noBtn.onclick = function() {
 };
 
 
-/* =================================
-   CHOOSE LOCATION
-================================= */
+/* ================================
+   CHOOSE PLACE
+================================ */
 
 function choosePlace(
     element,
@@ -893,9 +794,9 @@ function choosePlace(
 }
 
 
-/* =================================
+/* ================================
    CONFIRM DATE
-================================= */
+================================ */
 
 function confirmDate() {
 
@@ -904,10 +805,6 @@ function confirmDate() {
             .getElementById("datePicker")
             .value;
 
-
-    /*
-       Check date
-    */
 
     if (!date) {
 
@@ -919,10 +816,6 @@ function confirmDate() {
     }
 
 
-    /*
-       Check location
-    */
-
     if (!selectedPlace) {
 
         alert(
@@ -932,10 +825,6 @@ function confirmDate() {
         return;
     }
 
-
-    /*
-       Format date
-    */
 
     const formattedDate =
         new Date(
@@ -951,10 +840,6 @@ function confirmDate() {
             }
         );
 
-
-    /*
-       Show selected information
-    */
 
     document
         .getElementById("dateSummary")
@@ -975,19 +860,11 @@ function confirmDate() {
         `;
 
 
-    /*
-       Hide step 2
-    */
-
     document
         .getElementById("step2")
         .classList
         .add("hidden");
 
-
-    /*
-       Show step 3
-    */
 
     document
         .getElementById("step3")
@@ -1001,28 +878,20 @@ function confirmDate() {
         .add("fade");
 
 
-    /*
-       Scroll to top
-    */
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 
 
-    /*
-       Create hearts
-    */
-
     createHearts();
 
 }
 
 
-/* =================================
+/* ================================
    FLOATING HEARTS
-================================= */
+================================ */
 
 function createHearts() {
 
@@ -1083,10 +952,3 @@ function createHearts() {
 }
 
 </script>
-
-</body>
-
-</html>
-</body>
-</html>
-
